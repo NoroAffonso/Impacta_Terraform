@@ -104,10 +104,8 @@ resource "aws_instance" "mongodb" {
 resource "aws_security_group" "allow-slacko" {
     name = "allow_ssh_http"
     description = "allow ssh and http port"
-    # entrar na AWS e em VPC na segunda coluna tem a VPC ID, colar no campo abaixo https://console.aws.amazon.com/vpc/home?region=us-east-1#VpcDetails:VpcId=vpc-0291422ce6448f173
-   # vpc_id = "vpc-0291422ce6448f173"
-    
-    #teste vpc dinâmico
+     
+    #vpc dinâmico
     vpc_id = data.aws_vpc.my-vpc.id
     
     #"${data.aws_vpc.my-vpc.id}" 
@@ -232,4 +230,3 @@ output "slackapphost" {
   value = aws_instance.slacko-app.public_ip
 }
 
-# para acessar http://(ip)/docs
