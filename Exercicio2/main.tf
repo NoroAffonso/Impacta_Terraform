@@ -1,6 +1,6 @@
 module "slackoapp" {
     # module source
-    source = "./modulo/slacko-app"
+    source = "./modules/slacko-app"
     # Amazon VPC ID
     vpc_id = "YOUR_VPC_ID"
     # Amazon subnet ip range
